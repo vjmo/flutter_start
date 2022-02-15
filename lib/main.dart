@@ -63,31 +63,33 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'Значение инкремента:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-              FlatButton(
-                  onPressed: _incrementCounter,
-                  child: Text('+'),
-                  color: Colors.green,
-                  textColor: Colors.black),
-              FlatButton(
-                  onPressed: _decrementCounter,
-                  child: Text('-'),
-                  color: Colors.red,
-                  textColor: Colors.black),
-              FlatButton(
-                  onPressed: _reset,
-                  child: Text('Сбросить'),
-                  textColor: Colors.black),
-            ],
-          )),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            'Значение инкремента:',
+          ),
+          Text(
+            '$_counter',
+            style: Theme.of(context).textTheme.headline4,
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            FlatButton(
+                onPressed: _decrementCounter,
+                child: Text('-'),
+                color: Colors.red,
+                textColor: Colors.black),
+            FlatButton(
+                onPressed: _incrementCounter,
+                child: Text('+'),
+                color: Colors.green,
+                textColor: Colors.black),
+          ]),
+          FlatButton(
+              onPressed: _reset,
+              child: Text('Сбросить'),
+              textColor: Colors.grey),
+        ],
+      )),
     );
   }
 }
