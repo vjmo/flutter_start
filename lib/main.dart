@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Инкремент',
+      title: 'Общежития КубГАУ',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -52,44 +52,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    ElevatedButton(
-        child: Text("Value:", style: TextStyle(fontSize: 22)),
-        onPressed: () {
-          _incrementCounter;
-        });
     return Scaffold(
       appBar: AppBar(
-        title: Text("Инкремент" /*widget.title*/),
+        title: Text(widget.title),
       ),
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            'Значение инкремента:',
-          ),
-          Text(
-            '$_counter',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-            FlatButton(
-                onPressed: _decrementCounter,
-                child: Text('-'),
-                color: Colors.red,
-                textColor: Colors.black),
-            FlatButton(
-                onPressed: _incrementCounter,
-                child: Text('+'),
-                color: Colors.green,
-                textColor: Colors.black),
-          ]),
-          FlatButton(
-              onPressed: _reset,
-              child: Text('Сбросить'),
-              textColor: Colors.grey),
-        ],
-      )),
+      body:
+        Image.asset("assets/images/img_kubsau.jpg")
     );
   }
 }
